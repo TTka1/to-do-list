@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div>
+    <h1>To Do List</h1>
+
+
+    {{ form_start(form) }}
+
+    {{ form_end(form) }}
+
+    {% for allList in allLists %}
+        <div class="row">
+            <h3>{{ allList.name }}</h3>
+
+            <a href="{{ path('removeFrom', { 'id': allList.id }) }}">Obriši</a>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
